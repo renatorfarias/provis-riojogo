@@ -19,9 +19,33 @@ public class Tabuleiro extends javax.swing.JPanel {
     /**
      * Creates new form Tabuleiro
      */
+    int j = 0;
     private Image Im_Tabuleiro;
     Peça pv = new Peça();
     Peça pp = new Peça();
+    int[][]pos={{5,75,145,220,295,365,440,510,585,655},{650,650,650,650,650,650,650,650,650,650}};
+    
+    public void moverpv(){
+        System.out.println(pos[1][1]);
+        System.out.println(pos[2][1]);
+       //for(int b = j;b<j+d;b++){
+            //pv.setx(pos[1][b]);
+            //pv.sety(pos[2][b]);
+      // }
+    }
+    /*public void setpvx(int x){
+        pv.setx(x);
+    }
+    
+    public void setpvy(int y){
+        pv.sety(y);
+    }
+    public void setppx(int x){
+        pp.setx(x);
+    }
+    public void setppy(int y){
+        pp.sety(y);
+    }*/
     
     public Tabuleiro() {
         initComponents();
@@ -31,11 +55,11 @@ public class Tabuleiro extends javax.swing.JPanel {
         Image v = icone_v.getImage();
         Image p = icone_p.getImage();
         pv.setImage(v);
-        pv.setx(50);
-        pv.sety(200);
+        pv.setx(5);
+        pv.sety(650);
         pp.setImage(p);
-        pp.setx(50);
-        pp.sety(200);
+        pp.setx(5);
+        pp.sety(620);
         Im_Tabuleiro = icone.getImage();
         
     }
@@ -74,3 +98,4 @@ public class Tabuleiro extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
+ //1ª peça =

@@ -17,12 +17,10 @@ public class Gerador_de_telas extends javax.swing.JFrame {
      * Creates new form Gerador_de_telas
      */
     int valor;
+    Tabuleiro t = new Tabuleiro();
     public Gerador_de_telas() {
-        initComponents();
-        Tabuleiro t = new Tabuleiro();
-        this.jPanel1.add(t);
-        dado1 d = new dado1();
-        this.dado.add(d);
+        initComponents();        
+        this.jPanel1.add(t);        
     }
 
     /**
@@ -40,7 +38,6 @@ public class Gerador_de_telas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(900, 724));
-        setPreferredSize(new java.awt.Dimension(900, 724));
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
@@ -97,6 +94,7 @@ public class Gerador_de_telas extends javax.swing.JFrame {
         dado d = new dado();
         valor = d.JogarDado();
         System.out.println(valor);
+        t.moverpv();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
