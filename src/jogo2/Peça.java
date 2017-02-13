@@ -9,7 +9,7 @@ import java.awt.Image;
 
 public class Peça {
     private int x,y;
-    private int dx,dy;
+    private int posicaoAntiga=0,posicaoNova=0;
     private Image Im_peça;
     
     void setImage(Image I){

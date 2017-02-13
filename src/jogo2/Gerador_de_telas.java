@@ -93,7 +93,7 @@ public class Gerador_de_telas extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         dado d = new dado();
         valor = d.JogarDado();
-        System.out.println(valor);
+        //System.out.println(valor);
         t.moverpv();
     }//GEN-LAST:event_jButton1ActionPerformed
 
