@@ -56,4 +56,5 @@ public class Peça {
 		return tabuleiro[0][posicaoNovaDoJogador - 1];
     }
     
+    
 }

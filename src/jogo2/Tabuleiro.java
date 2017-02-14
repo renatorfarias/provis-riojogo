@@ -8,49 +8,63 @@ package jogo2;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.util.Arrays;
-import java.util.Random;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import javax.swing.Timer;
 
 /**
  *
  * @author renat
  */
-public class Tabuleiro extends javax.swing.JPanel {
+public class Tabuleiro extends javax.swing.JPanel implements ActionListener{
 
     /**
      * Creates new form Tabuleiro
      */
     //int j = 0;
     private Image Im_Tabuleiro;
+    vitoria v = new vitoria();
     Peça pv = new Peça();
     Peça pp = new Peça();
-    int pos[][]={{5, 75, 145, 220, 295, 365, 440, 510, 585, 655}, { 650, 650, 650, 650, 650, 650, 650, 650, 650, 650}};
+    int pos[][]={{5, 75, 145, 220, 295, 365, 440, 510, 585, 655,655,585,510,440,365,295,220,145,75,5,5, 75, 145, 220, 295, 365, 440, 510, 585, 655,655,585,510,440,365,295,220,145,75,5,5, 75, 145, 220, 295, 365, 440, 510, 585, 655,655,585,510,440,365,295,220,145,75,5,5, 75, 145, 220, 295, 365, 440, 510, 585, 655,655,585,510,440,365,295,220,145,75,5,5, 75, 145, 220, 295, 365, 440, 510, 585, 655,655,585,510,440,365,295,220,145,75,5}, { 650, 650, 650, 650, 650, 650, 650, 650, 650, 650,580,580,580,580,580,580,580,580,580,580,515,515,515,515,515,515,515,515,515,515,445,445,445,445,445,445,445,445,445,445,380,380,380,380,380,380,380,380,380,380,310,310,310,310,310,310,310,310,310,310,240,240,240,240,240,240,240,240,240,240,170,170,170,170,170,170,170,170,170,170,100,100,100,100,100,100,100,100,100,100,35,35,35,35,35,35,35,35,35,35}};
     
     public void moverpv(int d){
-        pv.setPA(pv.getPA());
+        pv.setPA(pv.getPN());
         pv.setPN(pv.getPA()+ d);
-        System.out.println(pos[1][pv.getPN() -1]);
-        System.out.println(pos[2][pv.getPN() -1]);
-    
+        if(pv.getPN()-1 <= 99){
+            if(pv.getPN()== 100){
+               v.setVisible(true);
+                }
+            else{
+            pv.setx(pos[0][pv.getPN()-1]);
+            pv.sety(pos[1][pv.getPN()-1]);
+            System.out.println(pos[0][pv.getPN() -1]);
+            System.out.println(pos[1][pv.getPN() -1]);}}
+        else{
+            int aux = (pv.getPN()-1) -100;
+            pv.setx(pos[0][99-aux]);
+            pv.sety(pos[1][99-aux]);
+            pv.setPN(99-aux);
+        }
+        
     }
-    
-    int j = 0;
-    int Tabuleiro[][] = {{1, 2, 3, 4 , 5}, {5, 4, 3, 2, 1}};
-    public Tabuleiro() {
+    public Tabuleiro(){
         initComponents();
+        Timer t = new Timer(5,this);
         ImageIcon icone = new ImageIcon("src\\imagens\\Tabuleiro.png");
         ImageIcon icone_v = new ImageIcon("src\\imagens\\Icone_Vermelho.png");
         ImageIcon icone_p = new ImageIcon("src\\imagens\\Icone_Preto.png");
         Image v = icone_v.getImage();
         Image p = icone_p.getImage();
         pv.setImage(v);
-        pv.setx(5);
-        pv.sety(650);
+        //pv.setx(5);
+        //pv.sety(650);
         pp.setImage(p);
-        pp.setx(5);
-        pp.sety(620);
+        //pp.setx(5);
+        //pp.sety(620);
         Im_Tabuleiro = icone.getImage();
+        t.start();
         
     }
     public void paint(Graphics g){
@@ -59,6 +73,10 @@ public class Tabuleiro extends javax.swing.JPanel {
         tela.drawImage(pv.get_image(),pv.getx(),pv.gety(),null);
         tela.drawImage(pp.get_image(),pp.getx(),pp.gety(),null);
         g.dispose();
+    }
+    @Override
+    public void actionPerformed(ActionEvent arg0){
+        repaint();
     }
 
     /**
@@ -88,4 +106,3 @@ public class Tabuleiro extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
- //1ª peça =
