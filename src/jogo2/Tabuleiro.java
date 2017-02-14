@@ -8,6 +8,8 @@ package jogo2;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.util.Arrays;
+import java.util.Random;
 import javax.swing.ImageIcon;
 
 /**
@@ -23,14 +25,18 @@ public class Tabuleiro extends javax.swing.JPanel {
     private Image Im_Tabuleiro;
     Peça pv = new Peça();
     Peça pp = new Peça();
-    int pos[][]={{5,75,145,220,295,365,440,510,585,655},{650,650,650,650,650,650,650,650,650,650}};
+    int pos[][]={{5, 75, 145, 220, 295, 365, 440, 510, 585, 655}, { 650, 650, 650, 650, 650, 650, 650, 650, 650, 650}};
     
-    public void moverpv(){
-        System.out.println(pos[1][1]);
-        System.out.println(pos[2][1]);
+    public void moverpv(int d){
+        pv.setPA(pv.getPA());
+        pv.setPN(pv.getPA()+ d);
+        System.out.println(pos[1][pv.getPN() -1]);
+        System.out.println(pos[2][pv.getPN() -1]);
     
     }
     
+    int j = 0;
+    int Tabuleiro[][] = {{1, 2, 3, 4 , 5}, {5, 4, 3, 2, 1}};
     public Tabuleiro() {
         initComponents();
         ImageIcon icone = new ImageIcon("src\\imagens\\Tabuleiro.png");

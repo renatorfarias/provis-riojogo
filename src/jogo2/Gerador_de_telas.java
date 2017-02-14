@@ -94,7 +94,7 @@ public class Gerador_de_telas extends javax.swing.JFrame {
         dado d = new dado();
         valor = d.JogarDado();
         //System.out.println(valor);
-        t.moverpv();
+        t.moverpv(valor);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

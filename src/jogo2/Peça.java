@@ -35,6 +35,25 @@ public class Peça {
     Image get_image(){
     return Im_peça;
     }
+    
+    void setPA(int posA){
+        this.posicaoAntiga = posA;
+    }
+    
+    void setPN(int posN){
+        this.posicaoNova = posN;
+    }
+    
+    int getPA(){
+        return posicaoAntiga;
+    }
+    
+    int getPN(){
+        return posicaoNova;
+    }
 
+    int getLeituraDaPosicaoX(int posicaoNovaDoJogador, int tabuleiro[][]){ //Não entendi o porquê do static. O eclipse que mandou botar
+		return tabuleiro[0][posicaoNovaDoJogador - 1];
+    }
     
 }
